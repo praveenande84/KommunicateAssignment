@@ -1,0 +1,44 @@
+/* sidebar-background.css */
+.side-bar-component {
+    background-size: cover;
+    width: 274px;
+    height: 568px;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.step-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:20px;
+}
+
+.number{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ffffff ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color:#ffffff
+}
+
+
+.step-selected {
+    background-color:lightgreen;
+    color: #000000;
+}
+
+.step-heading{
+    color: grey;
+    font-size: 14px;;
+}
+
+.step-name{
+    color:#ffffff;
+    font-weight: 700;
+}

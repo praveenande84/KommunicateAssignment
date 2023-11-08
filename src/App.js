@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+/* -----> Third Paty Packages <----- */
+import React, { useState } from 'react';
+import MultiStepContext from './Context/MultiStepContext';
+
+/* -----> External Components <----- */
+import MultistepForm from './Pages/MultiStepForm';
+
+/* -----> Styles <----- */
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+/* -----> Functional Component <----- */
+const App = () => {
+	console.log('App Component');
 
+	// State
+	const [stepNumber, setStepNumber] = useState(1);
+
+	const onChangeStepNumber = (updatedNumber) => {
+		setStepNumber(updatedNumber);
+	};
+
+	// Context Object
+	const ContextObject = {
+		stepNumber: stepNumber,
+		changeStepNumber: onChangeStepNumber,
+	};
+
+	// Return JSX
+	return (
+		<MultiStepContext.Provider value={ContextObject}>
+			<div className="App-component">
+				<MultistepForm />
+			</div>
+		</MultiStepContext.Provider>
+	);
+};
+
+/* -----> Default Export <----- */
 export default App;
